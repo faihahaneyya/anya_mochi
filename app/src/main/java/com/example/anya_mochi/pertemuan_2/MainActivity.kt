@@ -1,9 +1,10 @@
-package com.example.anya_mochi
+package com.example.anya_mochi.pertemuan_2
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.anya_mochi.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,10 +1,11 @@
-package com.example.anya_mochi
+package com.example.anya_mochi.pertemuan_2
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.anya_mochi.R
 import kotlin.math.PI
 
 class TabungActivity : AppCompatActivity() {

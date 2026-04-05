@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="rexodus_red">#E21212</color>
+    <color name="input_bg">#F6F6F6</color>
+    <color name="text_gray">#7F7F7F</color>
 </resources>
