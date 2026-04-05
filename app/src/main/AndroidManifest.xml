@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Anyamochi">
 
         <activity
-            android:name=".pertemuan_3.SuccessActivity"
+            android:name=".pertemuan_3.WelcomeActivity"
             android:exported="false" />
 
         <activity

@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
             val pass = binding.etPassword.text.toString()
 
             if (email.isNotEmpty() && pass.isNotEmpty()) {
-                startActivity(Intent(this, SuccessActivity::class.java))
+                startActivity(Intent(this, WelcomeActivity::class.java))
                 finish()
             } else {
                 Toast.makeText(this, "Isi kolom dulu ya!", Toast.LENGTH_SHORT).show()
