@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="rexodus_red">#E21212</color>
-    <color name="input_bg">#F6F6F6</color>
-    <color name="text_gray">#7F7F7F</color>
+    <color name="background_welcome">#FFFBF1</color>
+    <color name="divider">#DE736E</color>
+    <color name="text_title">#000000</color>
+    <color name="text_subtitle">#4F4F4F</color>
+    <color name="button_primary">#DE736E</color>
+    <color name="button_secondary">#FFB7B7</color>
+    <color name="button_accent">#FFF1D0</color>
+    <color name="button_danger">#000000</color>
+    <color name="background_card">#FFFFFF</color>
+    <color name="button_login_start">#DE736E</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="text_gray">#828282</color>
+    <color name="rexodus_red">#DE736E</color>
+    <color name="background_mochi">#FFFBF1</color>
 </resources>

@@ -11,29 +11,37 @@
         android:theme="@style/Theme.Anyamochi">
 
         <activity
-            android:name=".pertemuan_3.WelcomeActivity"
-            android:exported="false" />
+            android:name=".pertemuan_3.OnboardingActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".pertemuan_3.LoginActivity"
             android:exported="false" />
 
         <activity
-            android:name=".pertemuan_3.OnboardingActivity"
-            android:exported="true"> <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
+            android:name=".pertemuan_3.WelcomeActivity"
+            android:exported="false" />
 
         <activity
             android:name=".pertemuan_2.MainActivity"
-            android:exported="false" /> <activity
-        android:name=".pertemuan_2.PersegiPanjangActivity"
-        android:exported="false" />
-
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan_2.PersegiPanjangActivity"
+            android:exported="false" />
         <activity
             android:name=".pertemuan_2.TabungActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".pertemuan_4.JobBoardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan_4.PortofolioActivity"
             android:exported="false" />
 
     </application>

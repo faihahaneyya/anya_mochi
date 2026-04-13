@@ -3,6 +3,7 @@ package com.example.anya_mochi.pertemuan_2
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.anya_mochi.R
 
@@ -11,16 +12,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Tombol ke Persegi Panjang
+        // TANGKAP DATA DARI PERTEMUAN 4 (Jika ada)
+        val judul = intent.getStringExtra("EXTRA_JUDUL") ?: "Menu Kalkulator"
+        // Cari TextView di activity_main.xml (pastikan ID-nya ada)
+        findViewById<TextView>(R.id.tvJudulP2)?.text = judul
+
         findViewById<Button>(R.id.btnGoPersegi).setOnClickListener {
-            val intentPersegi = Intent(this, PersegiPanjangActivity::class.java)
-            startActivity(intentPersegi)
+            startActivity(Intent(this, PersegiPanjangActivity::class.java))
         }
 
-        // Tombol ke Tabung
         findViewById<Button>(R.id.btnGoTabung).setOnClickListener {
-            val intentTabung = Intent(this, TabungActivity::class.java)
-            startActivity(intentTabung)
+            startActivity(Intent(this, TabungActivity::class.java))
         }
     }
 }

@@ -3,170 +3,206 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/background_mochi">
 
     <TextView
-        android:id="@+id/tvSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Let's login for explore continues"
-        android:fontFamily="@font/aber"
-        android:textColor="@color/text_gray"
-        android:layout_marginTop="60dp"
+        android:fontFamily="@font/starfish"
+        android:text="REX"
+        android:textColor="#0D000000"
+        android:textSize="150sp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="-30dp"
+        android:layout_marginEnd="-20dp" />
 
-    <ImageView
-        android:id="@+id/ivLogo"
-        android:layout_width="120dp"
-        android:layout_height="80dp"
-        android:src="@drawable/rexlogo"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/tvSubtitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="REXODUS GAMING"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/aber"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/ivLogo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="30dp"
-        android:hint="Enter your username"
-        android:paddingStart="45dp"
-        android:paddingEnd="15dp"
-        android:drawableStart="@drawable/username"
-        android:drawablePadding="10dp"
-        android:background="@drawable/bg_input"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="15dp"
-        android:hint="Enter your password"
-        android:inputType="textPassword"
-        android:paddingStart="45dp"
-        android:paddingEnd="15dp"
-        android:drawableStart="@drawable/password"
-        android:drawableEnd="@drawable/eye"
-        android:drawablePadding="10dp"
-        android:background="@drawable/bg_input"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/etEmail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <CheckBox
-        android:id="@+id/cbRememberMe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Keep me signed in"
-        android:textColor="@color/text_gray"
-        android:textSize="12sp"
-        android:fontFamily="@font/aber"
-        android:buttonTint="@color/rexodus_red"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/etPassword"
-        app:layout_constraintStart_toStartOf="@id/etPassword" />
-
-    <TextView
-        android:id="@+id/tvForgot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Forgot password"
-        android:textColor="@color/rexodus_red"
-        android:textStyle="bold"
-        android:fontFamily="@font/aber"
-        android:layout_marginTop="15dp"
-        app:layout_constraintTop_toBottomOf="@id/etPassword"
-        app:layout_constraintEnd_toEndOf="@id/etPassword" />
-
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="30dp"
-        android:text="Sign In"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:backgroundTint="@color/rexodus_red"
-        android:fontFamily="@font/aber"
-        app:cornerRadius="15dp"
-        app:layout_constraintTop_toBottomOf="@id/cbRememberMe"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/tvConnectWith"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="You can Connect with"
-        android:layout_marginTop="25dp"
-        android:textColor="@color/text_gray"
-        android:fontFamily="@font/aber"
-        app:layout_constraintTop_toBottomOf="@id/btnLogin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageView
-        android:id="@+id/ivGoogle"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/google"
-        android:layout_marginTop="15dp"
-        app:layout_constraintTop_toBottomOf="@id/tvConnectWith"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/llSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Don't have an account? "
-            android:textColor="@color/black"
-            android:fontFamily="@font/aber" />
+            android:paddingBottom="30dp">
 
-        <TextView
-            android:id="@+id/tvSignUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign Up here"
-            android:textColor="@color/rexodus_red"
-            android:textStyle="bold"
-            android:fontFamily="@font/aber" />
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="60dp"
+                android:src="@drawable/rexlogo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/starfish"
+                android:text="REXODUS"
+                android:textColor="@color/black"
+                android:textSize="36sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivLogo" />
 
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aber"
+                android:text="Join the ultimate gaming experience"
+                android:textColor="@color/text_gray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="40dp"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#0D000000"
+                app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="25dp">
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="@null"
+                        android:drawableStart="@drawable/username"
+                        android:drawablePadding="15dp"
+                        android:fontFamily="@font/aber"
+                        android:hint="Username"
+                        android:paddingHorizontal="10dp"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="10dp"
+                        android:background="#20000000" />
+
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="@null"
+                        android:drawableStart="@drawable/password"
+                        android:drawableEnd="@drawable/eye"
+                        android:drawablePadding="15dp"
+                        android:fontFamily="@font/aber"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:paddingHorizontal="10dp"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <CheckBox
+                android:id="@+id/cbRememberMe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:buttonTint="@color/rexodus_red"
+                android:fontFamily="@font/aber"
+                android:text="Remember me"
+                android:textColor="@color/text_gray"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/cvLogin"
+                app:layout_constraintTop_toBottomOf="@id/cvLogin" />
+
+            <TextView
+                android:id="@+id/tvForgot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aber"
+                android:text="Forgot?"
+                android:textColor="@color/rexodus_red"
+                android:textStyle="bold"
+                app:layout_alignBottom="@id/cbRememberMe"
+                app:layout_constraintEnd_toEndOf="@id/cvLogin"
+                app:layout_constraintTop_toTopOf="@id/cbRememberMe" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/rexodus_red"
+                android:fontFamily="@font/starfish"
+                android:text="Sign In ✨"
+                android:textAllCaps="false"
+                android:textSize="22sp"
+                app:cornerRadius="20dp"
+                app:layout_constraintTop_toBottomOf="@id/cbRememberMe" />
+
+            <TextView
+                android:id="@+id/tvConnectWith"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:alpha="0.5"
+                android:fontFamily="@font/aber"
+                android:text="OR CONNECT WITH"
+                android:textSize="10sp"
+                android:letterSpacing="0.2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+
+            <ImageView
+                android:id="@+id/ivGoogle"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/google"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvConnectWith" />
+
+            <LinearLayout
+                android:id="@+id/llSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivGoogle">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aber"
+                    android:text="New member? "
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvSignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aber"
+                    android:text="Join now"
+                    android:textColor="@color/rexodus_red"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

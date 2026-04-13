@@ -19,10 +19,12 @@ class LoginActivity : AppCompatActivity() {
             val pass = binding.etPassword.text.toString()
 
             if (email.isNotEmpty() && pass.isNotEmpty()) {
-                startActivity(Intent(this, WelcomeActivity::class.java))
+                val intent = Intent(this, WelcomeActivity::class.java)
+                intent.putExtra("USER_NAME", email)
+                startActivity(intent)
                 finish()
             } else {
-                Toast.makeText(this, "Isi kolom dulu ya!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Email/Password salah", Toast.LENGTH_SHORT).show()
             }
         }
     }
