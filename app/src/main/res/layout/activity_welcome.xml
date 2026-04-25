@@ -3,19 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_mochi">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/starfish"
-        android:text="MOCHI"
-        android:textColor="#0D000000"
-        android:textSize="120sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="-20dp"
-        android:layout_marginEnd="-30dp" />
+    android:background="#FFF8EC"> <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/starfish"
+    android:text="MOCHI"
+    android:textColor="#1A00C896"
+    android:textSize="120sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_marginTop="-20dp"
+    android:layout_marginEnd="-30dp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -26,16 +24,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="30dp">
+            android:padding="24dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/aber"
                 android:text="HOLA,"
-                android:textColor="@color/rexodus_red"
+                android:textColor="#00C896"
                 android:letterSpacing="0.2"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -45,86 +43,84 @@
                 android:fontFamily="@font/starfish"
                 android:text="Welcome\nBack!"
                 android:textColor="@color/black"
-                android:textSize="50sp"
-                android:lineHeight="48dp"
-                android:layout_marginTop="5dp"/>
+                android:textSize="40sp"
+                android:layout_marginTop="2dp"/>
 
             <View
-                android:layout_width="60dp"
-                android:layout_height="6dp"
-                android:background="@color/rexodus_red"
-                android:layout_marginTop="15dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:fontFamily="@font/aber"
-                android:text="EXPLORE MENU"
-                android:textColor="@color/text_gray"
-                android:textSize="12sp"
-                android:letterSpacing="0.1" />
+                android:layout_width="50dp"
+                android:layout_height="4dp"
+                android:background="#00C896"
+                android:layout_marginTop="10dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnRumusBangunRuang"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="15dp"
-                android:backgroundTint="@color/rexodus_red"
+                android:layout_height="65dp"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="#00C896"
                 android:fontFamily="@font/starfish"
                 android:text="📐 Geometry Calc"
                 android:textAllCaps="false"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="@color/white"
-                app:cornerRadius="25dp"
-                app:elevation="4dp" />
+                app:cornerRadius="20dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnJobBoard"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="15dp"
-                android:backgroundTint="#FFB7B7"
+                android:layout_height="65dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#FFF8EC"
                 android:fontFamily="@font/starfish"
                 android:text="🎮 Career Path"
                 android:textAllCaps="false"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                app:cornerRadius="25dp"
-                app:elevation="0dp" />
+                android:textSize="18sp"
+                android:textColor="#00C896"
+                app:cornerRadius="20dp"
+                app:strokeColor="#00C896"
+                app:strokeWidth="1dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnPortofolio"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="15dp"
-                android:backgroundTint="#FFF1D0"
+                android:layout_height="65dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#FFF8EC"
                 android:fontFamily="@font/starfish"
                 android:text="✨ Best Projects"
                 android:textAllCaps="false"
-                android:textSize="20sp"
-                android:textColor="@color/rexodus_red"
-                app:cornerRadius="25dp"
-                app:elevation="0dp" />
+                android:textSize="18sp"
+                android:textColor="#00C896"
+                app:cornerRadius="20dp"
+                app:strokeColor="#00C896"
+                app:strokeWidth="1dp" />
 
-            <View
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnWebBinaDesa"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:minHeight="40dp" />
+                android:layout_height="65dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#00C896"
+                android:fontFamily="@font/starfish"
+                android:text="🌐 Sistem Fasilitas Desa"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                app:cornerRadius="20dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogout"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="@font/aber"
                 android:text="Sign Out"
-                android:textColor="@color/black"
-                app:strokeColor="@color/black"
-                app:strokeWidth="2dp"
-                app:cornerRadius="20dp"
-                android:layout_marginBottom="20dp" />
+                android:textColor="#6F4E37"
+                app:cornerRadius="15dp"
+                app:strokeColor="#6F4E37"
+                app:strokeWidth="1dp" />
 
         </LinearLayout>
     </ScrollView>

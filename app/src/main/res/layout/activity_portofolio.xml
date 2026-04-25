@@ -3,20 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_mochi">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="REX"
-        android:fontFamily="@font/starfish"
-        android:textSize="200sp"
-        android:textColor="#10000000"
-        android:rotation="-15"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="-50dp"
-        android:layout_marginEnd="-40dp"/>
+    android:background="#FFF8EC"> <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="REX"
+    android:fontFamily="@font/starfish"
+    android:textSize="200sp"
+    android:textColor="#1000C896"
+    android:rotation="-15"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginBottom="-50dp"
+    android:layout_marginEnd="-40dp"/>
 
     <LinearLayout
         android:id="@+id/header"
@@ -31,7 +29,7 @@
             android:layout_height="wrap_content"
             android:text="EST. 2026"
             android:fontFamily="@font/aber"
-            android:textColor="@color/rexodus_red"
+            android:textColor="#00C896"
             android:letterSpacing="0.2"
             android:textSize="12sp"
             android:textStyle="bold" />
@@ -55,7 +53,7 @@
         android:layout_marginHorizontal="30dp"
         app:cardCornerRadius="35dp"
         app:cardElevation="0dp"
-        app:cardBackgroundColor="#0D000000"
+        app:cardBackgroundColor="#1000C896"
         app:layout_constraintTop_toBottomOf="@id/header">
 
         <LinearLayout
@@ -88,7 +86,7 @@
             <View
                 android:layout_width="50dp"
                 android:layout_height="4dp"
-                android:background="@color/rexodus_red"
+                android:background="#00C896"
                 android:layout_marginTop="25dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -108,7 +106,7 @@
             android:text="Explore our latest\nworks online."
             android:fontFamily="@font/aber"
             android:textSize="14sp"
-            android:textColor="@color/text_gray"/>
+            android:textColor="#555555"/>
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/btnTambahPortofolio"
@@ -118,7 +116,7 @@
             android:fontFamily="@font/starfish"
             android:textColor="@color/white"
             android:textSize="18sp"
-            android:backgroundTint="@color/rexodus_red"
+            android:backgroundTint="#00C896"
             app:icon="@drawable/eye"
             app:iconTint="@color/white" />
     </LinearLayout>

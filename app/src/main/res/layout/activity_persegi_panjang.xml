@@ -3,19 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_mochi">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/starfish"
-        android:text="P × L"
-        android:textColor="#0D000000"
-        android:textSize="180sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="-30dp"
-        android:layout_marginBottom="-50dp" />
+    android:background="#FFF8EC"> <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/starfish"
+    android:text="P × L"
+    android:textColor="#1000C896"
+    android:textSize="180sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginStart="-30dp"
+    android:layout_marginBottom="-50dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +28,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/aber"
             android:text="← BACK"
-            android:textColor="@color/rexodus_red"
+            android:textColor="#00C896"
             android:textSize="14sp"
             android:textStyle="bold"
             android:letterSpacing="0.1" />
@@ -48,7 +46,7 @@
         <View
             android:layout_width="50dp"
             android:layout_height="6dp"
-            android:background="@color/rexodus_red"
+            android:background="#00C896"
             android:layout_marginTop="10dp" />
 
         <androidx.cardview.widget.CardView
@@ -57,61 +55,58 @@
             android:layout_marginTop="40dp"
             app:cardCornerRadius="25dp"
             app:cardElevation="0dp"
-            app:cardBackgroundColor="#0D000000">
+            app:cardBackgroundColor="#1000C896"> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
+                android:text="PANJANG (p)"
+                android:fontFamily="@font/aber"
+                android:textSize="10sp"
+                android:alpha="0.6"
+                android:letterSpacing="0.1"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="PANJANG (p)"
-                    android:fontFamily="@font/aber"
-                    android:textSize="10sp"
-                    android:alpha="0.6"
-                    android:letterSpacing="0.1"/>
+            <EditText
+                android:id="@+id/etPanjang"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:fontFamily="@font/aber"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
 
-                <EditText
-                    android:id="@+id/etPanjang"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@null"
-                    android:hint="0"
-                    android:inputType="numberDecimal"
-                    android:fontFamily="@font/aber"
-                    android:textSize="20sp"
-                    android:textColor="@color/black"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#3000C896"
+                android:layout_marginVertical="10dp"/>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#20000000"
-                    android:layout_marginVertical="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LEBAR (l)"
+                android:fontFamily="@font/aber"
+                android:textSize="10sp"
+                android:alpha="0.6"
+                android:letterSpacing="0.1"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="LEBAR (l)"
-                    android:fontFamily="@font/aber"
-                    android:textSize="10sp"
-                    android:alpha="0.6"
-                    android:letterSpacing="0.1"/>
-
-                <EditText
-                    android:id="@+id/etLebar"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@null"
-                    android:hint="0"
-                    android:inputType="numberDecimal"
-                    android:fontFamily="@font/aber"
-                    android:textSize="20sp"
-                    android:textColor="@color/black" />
-
-            </LinearLayout>
+            <EditText
+                android:id="@+id/etLebar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:fontFamily="@font/aber"
+                android:textSize="20sp"
+                android:textColor="@color/black" />
+        </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <com.google.android.material.button.MaterialButton
@@ -119,7 +114,7 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_marginTop="30dp"
-            android:backgroundTint="@color/rexodus_red"
+            android:backgroundTint="#00C896"
             android:fontFamily="@font/starfish"
             android:text="CALCULATE ✨"
             android:textAllCaps="false"
@@ -130,9 +125,11 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_marginTop="20dp"
-            app:cardBackgroundColor="@color/button_accent"
+            app:cardBackgroundColor="#F8F0E5"
             app:cardCornerRadius="25dp"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            app:strokeColor="#00C896"
+            app:strokeWidth="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -155,7 +152,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/starfish"
                     android:text="0.00"
-                    android:textColor="@color/rexodus_red"
+                    android:textColor="#008F6B"
                     android:textSize="45sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>

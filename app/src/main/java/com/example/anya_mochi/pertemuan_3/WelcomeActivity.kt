@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.anya_mochi.AuthActivity
+import com.example.anya_mochi.WebViewActivity
 import com.example.anya_mochi.databinding.ActivityWelcomeBinding
 import com.example.anya_mochi.pertemuan_2.MainActivity
 import com.example.anya_mochi.pertemuan_4.JobBoardActivity
@@ -18,41 +20,41 @@ class WelcomeActivity : AppCompatActivity() {
         binding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Tombol 1: Ke Kalkulator (P2)
+        // Tombol 1: Ke Kalkulator
         binding.btnRumusBangunRuang.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("EXTRA_JUDUL", "KALKULATOR REXODUS")
-            intent.putExtra("EXTRA_DESC", "Hitung rumus bangun ruang favoritmu.")
             startActivity(intent)
         }
 
-        // Tombol 2: Ke Job Board (P4)
+        // Tombol 2: Ke Job Board
         binding.btnJobBoard.setOnClickListener {
             val intent = Intent(this, JobBoardActivity::class.java)
-            intent.putExtra("EXTRA_JUDUL", "REXODUS CAREER")
-            intent.putExtra("EXTRA_DESC", "Temukan karir impian di dunia gaming.")
             startActivity(intent)
         }
 
-        // Tombol 3: Ke Portofolio (P4)
+        // Tombol 3: Ke Portofolio
         binding.btnPortofolio.setOnClickListener {
             val intent = Intent(this, PortofolioActivity::class.java)
-            intent.putExtra("EXTRA_JUDUL", "REXODUS GALLERY")
-            intent.putExtra("EXTRA_DESC", "Lihat portofolio dan proyek terbaik kami.")
             startActivity(intent)
         }
 
-        // Tombol 4: Logout (Alert + SnackBar)
+        // Tombol Baru: Ke Bina Desa (Web View)
+        binding.btnWebBinaDesa.setOnClickListener {
+            startActivity(Intent(this, WebViewActivity::class.java))
+        }
+
+        // Tombol 4: Logout
         binding.btnLogout.setOnClickListener {
             AlertDialog.Builder(this)
                 .setTitle("Konfirmasi Logout")
                 .setMessage("Yakin ingin kembali ke halaman login?")
                 .setPositiveButton("Iya") { _, _ ->
-                    startActivity(Intent(this, LoginActivity::class.java))
+                    // Bersihkan status login
+                    getSharedPreferences("user_pref", MODE_PRIVATE).edit().clear().apply()
+                    startActivity(Intent(this, AuthActivity::class.java))
                     finish()
                 }
                 .setNegativeButton("Tidak") { _, _ ->
-                    // SnackBar sesuai permintaan soal
                     Snackbar.make(binding.root, "Logout dibatalkan", Snackbar.LENGTH_SHORT).show()
                 }
                 .show()

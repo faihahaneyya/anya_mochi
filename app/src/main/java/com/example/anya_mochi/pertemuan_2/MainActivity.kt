@@ -14,6 +14,9 @@ class MainActivity : AppCompatActivity() {
 
         // TANGKAP DATA DARI PERTEMUAN 4 (Jika ada)
         val judul = intent.getStringExtra("EXTRA_JUDUL") ?: "Menu Kalkulator"
+        val btnBack = findViewById<TextView>(R.id.btnBack)
+        btnBack.setOnClickListener { finish() }
+
         // Cari TextView di activity_main.xml (pastikan ID-nya ada)
         findViewById<TextView>(R.id.tvJudulP2)?.text = judul
 

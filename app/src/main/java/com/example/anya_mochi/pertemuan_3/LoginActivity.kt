@@ -25,6 +25,7 @@ class LoginActivity : AppCompatActivity() {
                 finish()
             } else {
                 Toast.makeText(this, "Email/Password salah", Toast.LENGTH_SHORT).show()
+
             }
         }
     }

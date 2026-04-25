@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_mochi">
@@ -19,19 +20,23 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="30dp">
+            android:paddingBottom="40dp">
 
             <ImageView
                 android:id="@+id/ivLogo"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="60dp"
+                android:layout_width="84dp"
+                android:layout_height="72dp"
+                android:layout_marginTop="36dp"
                 android:src="@drawable/rexlogo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -77,30 +82,30 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="25dp">
+                    android:padding="20dp">
 
                     <EditText
                         android:id="@+id/etEmail"
                         android:layout_width="match_parent"
-                        android:layout_height="55dp"
+                        android:layout_height="45dp"
                         android:background="@null"
                         android:drawableStart="@drawable/username"
                         android:drawablePadding="15dp"
                         android:fontFamily="@font/aber"
                         android:hint="Username"
                         android:paddingHorizontal="10dp"
-                        android:textSize="16sp" />
+                        android:textSize="14sp" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginVertical="10dp"
+                        android:layout_marginVertical="5dp"
                         android:background="#20000000" />
 
                     <EditText
                         android:id="@+id/etPassword"
                         android:layout_width="match_parent"
-                        android:layout_height="55dp"
+                        android:layout_height="45dp"
                         android:background="@null"
                         android:drawableStart="@drawable/password"
                         android:drawableEnd="@drawable/eye"
@@ -109,7 +114,7 @@
                         android:hint="Password"
                         android:inputType="textPassword"
                         android:paddingHorizontal="10dp"
-                        android:textSize="16sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -134,34 +139,36 @@
                 android:text="Forgot?"
                 android:textColor="@color/rexodus_red"
                 android:textStyle="bold"
-                app:layout_alignBottom="@id/cbRememberMe"
                 app:layout_constraintEnd_toEndOf="@id/cvLogin"
-                app:layout_constraintTop_toTopOf="@id/cbRememberMe" />
+                app:layout_constraintTop_toTopOf="@id/cbRememberMe"
+                app:layout_constraintBottom_toBottomOf="@id/cbRememberMe" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogin"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
                 android:layout_marginHorizontal="25dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="24dp"
                 android:backgroundTint="@color/rexodus_red"
                 android:fontFamily="@font/starfish"
                 android:text="Sign In ✨"
                 android:textAllCaps="false"
                 android:textSize="22sp"
                 app:cornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cbRememberMe" />
 
             <TextView
                 android:id="@+id/tvConnectWith"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="12dp"
                 android:alpha="0.5"
                 android:fontFamily="@font/aber"
+                android:letterSpacing="0.2"
                 android:text="OR CONNECT WITH"
                 android:textSize="10sp"
-                android:letterSpacing="0.2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnLogin" />
@@ -180,7 +187,7 @@
                 android:id="@+id/llSignUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
