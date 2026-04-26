@@ -16,4 +16,11 @@
     <color name="text_gray">#828282</color>
     <color name="rexodus_red">#DE736E</color>
     <color name="background_mochi">#FFFBF1</color>
+
+    <color name="green_main">#00C896</color>
+    <color name="green_dark">#008F6B</color>
+    <color name="green_light">#A5F3E0</color>
+    <color name="background_cream">#FFF8EC</color>
+    <color name="background_light_mint">#F0F4F3</color>
+    <color name="text_brown">#6F4E37</color>
 </resources>
