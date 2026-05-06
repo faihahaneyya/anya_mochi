@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrasi Akun"
+        android:fontFamily="@font/starfish"
+        android:textSize="28sp"
+        android:textColor="#00C896"
+        android:layout_marginBottom="30dp" />
+
+    <EditText
+        android:id="@+id/etNama"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Nama Lengkap"
+        android:fontFamily="@font/aber"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"/>
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:hint="No. Handphone"
+        android:inputType="number"
+        android:fontFamily="@font/aber"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"/>
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="422dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:drawable/edit_text"
+        android:fontFamily="@font/aber"
+        android:hint="Username"
+        android:padding="12dp" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:fontFamily="@font/aber"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"/>
+
+    <Button
+        android:id="@+id/btnDaftar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:text="Daftar"
+        android:textAllCaps="false"
+        android:backgroundTint="#00C896"
+        android:fontFamily="@font/starfish"
+        android:textSize="18sp"/>
+
+</LinearLayout>

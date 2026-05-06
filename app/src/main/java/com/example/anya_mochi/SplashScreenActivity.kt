@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
+import com.example.anya_mochi.pertemuan_3.LoginActivity
 import com.example.anya_mochi.pertemuan_3.WelcomeActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -23,7 +24,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
             if (isLogin) {
                 // Sekarang langsung ke WelcomeActivity
-                startActivity(Intent(this@SplashScreenActivity, WelcomeActivity::class.java))
+                startActivity(Intent(this@SplashScreenActivity, BaseActivity::class.java))
             } else {
                 startActivity(Intent(this@SplashScreenActivity, AuthActivity::class.java))
             }
