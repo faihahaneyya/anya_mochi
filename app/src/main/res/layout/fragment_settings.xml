@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8EC">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/starfish"
+        android:text="SETTINGS"
+        android:textColor="#1A00C896"
+        android:textSize="90sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="-15dp"
+        android:layout_marginEnd="-40dp" />
+
+    <View
+        android:id="@+id/headerAbout"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#00C896"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btnBackSettings"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="20dp"
+        android:padding="4dp"
+        android:src="@drawable/ic_arrow_back"
+        android:contentDescription="Back"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:tint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/headerAbout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/headerAbout" />
+
+    <TextView
+        android:id="@+id/tvSettingsTitleHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/starfish"
+        android:text="Settings &amp; Info"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/headerAbout"
+        app:layout_constraintStart_toEndOf="@+id/btnBackSettings"
+        app:layout_constraintTop_toTopOf="@+id/headerAbout" />
+
+    <View
+        android:id="@+id/lineSettings"
+        android:layout_width="60dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="12dp"
+        android:background="#00C896"
+        app:layout_constraintStart_toStartOf="@+id/btnBackSettings"
+        app:layout_constraintTop_toBottomOf="@id/headerAbout" />
+
+    <ListView
+        android:id="@+id/lvSettings"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:paddingHorizontal="16dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lineSettings" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,8 +6,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.anya_mochi.databinding.FragmentProfileBinding
+import com.google.android.material.chip.Chip
 
 class ProfileFragment : Fragment() {
 
@@ -38,6 +40,15 @@ class ProfileFragment : Fragment() {
         // Logika Klik GitHub
         binding.tvGithub.setOnClickListener {
             openUrl("https://github.com/faihahaneyya")
+        }
+
+        // Logika Interaksi Chip Group Profile
+        binding.chipGroupProfile.setOnCheckedStateChangeListener { group, checkedIds ->
+            val selectedChipId = checkedIds.firstOrNull()
+            if (selectedChipId != null) {
+                val chip = group.findViewById<Chip>(selectedChipId)
+                Toast.makeText(requireContext(), "Fokus: ${chip.text}", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

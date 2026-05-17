@@ -57,6 +57,24 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:hintEnabled="true">
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="#F0F4F3"
+                    android:hint="Email Address"
+                    android:fontFamily="@font/aber"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="16dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilPass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -86,6 +104,20 @@
                 android:fontFamily="@font/starfish"
                 android:textStyle="bold"
                 android:textColor="@color/white"
+                app:cornerRadius="16dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancel"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="12dp"
+                android:text="KEMBALI"
+                android:textSize="16sp"
+                android:fontFamily="@font/starfish"
+                android:textStyle="bold"
+                android:textColor="#666666"
+                app:strokeColor="#CCCCCC"
                 app:cornerRadius="16dp" />
 
             <LinearLayout

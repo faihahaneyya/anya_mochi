@@ -6,8 +6,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView // WAJIB ADA: Untuk mendeteksi icon settings
 import androidx.fragment.app.Fragment
 import com.example.anya_mochi.AuthActivity
+import com.example.anya_mochi.R
 import com.example.anya_mochi.WebViewActivity
 import com.example.anya_mochi.databinding.FragmentHomeBinding
 import com.example.anya_mochi.pertemuan_2.MainActivity
@@ -31,8 +33,18 @@ class HomeFragment : Fragment() {
             startActivity(Intent(requireContext(), MainActivity::class.java))
         }
 
+        // KEMBALI NORMAL: Tombol Career Path membuka halaman JobBoardActivity bawaanmu semula
         binding.btnJobBoard.setOnClickListener {
             startActivity(Intent(requireContext(), JobBoardActivity::class.java))
+        }
+
+        // SOLUSI MANUAL ANTI-ERROR: Menggunakan findViewById langsung ke layout view
+        val icSettings = view.findViewById<ImageView>(R.id.ic_settings)
+        icSettings.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, com.example.anya_mochi.settings.SettingsFragment())
+                .addToBackStack(null) // Biar kalau ditekan tombol back di HP, kembali ke Home
+                .commit()
         }
 
         binding.btnPortofolio.setOnClickListener {
