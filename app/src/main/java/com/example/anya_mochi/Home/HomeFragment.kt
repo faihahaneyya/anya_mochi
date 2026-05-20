@@ -68,6 +68,27 @@ class HomeFragment : Fragment() {
                 .setNegativeButton("Tidak", null)
                 .show()
         }
+
+        // ========================================================
+        // KODE TAMBAHAN UNTUK TABLAYOUT & VIEWPAGER FEED BARU
+        // ========================================================
+
+        // Ambil ID komponen TabLayout dan ViewPager2 dari layout
+        val tabLayout = view.findViewById<com.google.android.material.tabs.TabLayout>(R.id.tabLayoutFeed)
+        val viewPager = view.findViewById<androidx.viewpager2.widget.ViewPager2>(R.id.viewPagerFeed)
+
+        // Pasang Adapter ViewPager versi Kotlin (Menggunakan nama FeedViewPager sesuai request kamu)
+        val pagerAdapter = com.example.anya_mochi.feed.FeedViewPager(this)
+        viewPager.adapter = pagerAdapter
+
+        // Hubungkan TabLayout dengan ViewPager2 menggunakan TabLayoutMediator
+        com.google.android.material.tabs.TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            when (position) {
+                0 -> tab.text = "Terbaru"
+                1 -> tab.text = "Populer"
+                2 -> tab.text = "Rekomendasi"
+            }
+        }.attach()
     }
 
     override fun onDestroyView() {

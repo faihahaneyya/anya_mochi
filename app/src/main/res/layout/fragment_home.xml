@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
@@ -140,6 +140,53 @@
 
             </androidx.gridlayout.widget.GridLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="12dp"
+                android:background="#1500C896"
+                android:paddingVertical="8dp"
+                android:paddingHorizontal="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/starfish"
+                    android:text="Activity Feed"
+                    android:textColor="#00C896"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayoutFeed"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#FDF2E2"
+                app:tabBackground="?attr/selectableItemBackground"
+                app:tabRippleColor="#2200C896"
+                app:tabTextColor="#8A8A8A"
+                app:tabSelectedTextColor="#00C896"
+                app:tabIndicatorColor="#00C896"
+                app:tabIndicatorHeight="3dp"
+                app:tabIndicatorFullWidth="false"
+                app:tabInlineLabel="true"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#1100C896">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPagerFeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="4dp" />
+            </androidx.cardview.widget.CardView>
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogout"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -155,5 +202,5 @@
                 app:strokeWidth="1dp" />
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
