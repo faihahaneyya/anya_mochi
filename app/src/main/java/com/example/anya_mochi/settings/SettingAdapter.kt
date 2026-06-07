@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.TextView
 import com.example.anya_mochi.R
+import com.example.anya_mochi.databinding.ItemSettingBinding
 
 class SettingAdapter(
     context: Context,
@@ -14,22 +14,15 @@ class SettingAdapter(
 ) : ArrayAdapter<SettingItem>(context, R.layout.item_setting, settingsList) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        // Inflate layout menggunakan inflater biasa tanpa binding
-        val rowView = LayoutInflater.from(context).inflate(R.layout.item_setting, parent, false)
+        // Melakukan inflate binding secara langsung untuk menghindari error inisialisasi variabel kosong
+        val binding = ItemSettingBinding.inflate(LayoutInflater.from(context), parent, false)
 
-        // Hubungkan komponen menggunakan findViewById manual
-        val tvIcon = rowView.findViewById<TextView>(R.id.tvSettingIcon)
-        val tvTitle = rowView.findViewById<TextView>(R.id.tvSettingTitle)
-        val tvSubtitle = rowView.findViewById<TextView>(R.id.tvSettingSubtitle)
-
-        // Ambil data item sesuai posisi baris
         val item = settingsList[position]
 
-        // Set teks data ke komponen view
-        tvIcon.text = item.icon
-        tvTitle.text = item.title
-        tvSubtitle.text = item.subtitle
+        binding.tvSettingIcon.text = item.icon
+        binding.tvSettingTitle.text = item.title
+        binding.tvSettingSubtitle.text = item.subtitle
 
-        return rowView
+        return binding.root
     }
 }

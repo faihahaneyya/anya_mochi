@@ -4,26 +4,31 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.ListView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.anya_mochi.R
+import com.example.anya_mochi.databinding.FragmentSettingsBinding
 
 class SettingsFragment : Fragment() {
+
+    // 1. Inisialisasi variabel View Binding khas Fragment
+    private var _binding: FragmentSettingsBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Hubungkan dengan layout fragment_settings.xml
-        val view = inflater.inflate(R.layout.fragment_settings, container, false)
+    ): View {
+        // 2. Meng-inflate layout menggunakan class Binding otomatis
+        _binding = FragmentSettingsBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        val lvSettings = view.findViewById<ListView>(R.id.lvSettings)
-        val btnBackSettings = view.findViewById<ImageView>(R.id.btnBackSettings)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        // LOGIKA ARROW BACK: Menghapus fragment ini dari stack dan otomatis kembali ke halaman Home
-        btnBackSettings.setOnClickListener {
+        // 3. LOGIKA ARROW BACK: Langsung panggil ID dari xml via binding
+        binding.btnBackSettings.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
 
@@ -36,16 +41,20 @@ class SettingsFragment : Fragment() {
             SettingItem("📞", "Help & Support", "Hubungi tim bantuan Sistem Desa")
         )
 
-        // Pasang adapter ke ListView
+        // 4. PASANG ADAPTER KE LISTVIEW VIA BINDING
         val adapter = SettingAdapter(requireContext(), listMenu)
-        lvSettings.adapter = adapter
+        binding.lvSettings.adapter = adapter
 
-        // Logika ketika salah satu menu di list ditekan
-        lvSettings.setOnItemClickListener { _, _, position, _ ->
+        // 5. LOGIKA KLIK ITEM LISTVIEW VIA BINDING
+        binding.lvSettings.setOnItemClickListener { _, _, position, _ ->
             val selectedMenu = listMenu[position]
             Toast.makeText(requireContext(), "Membuka: ${selectedMenu.title}", Toast.LENGTH_SHORT).show()
         }
+    }
 
-        return view
+    // 6. Wajib bersihkan binding saat view dihancurkan agar tidak terjadi kebocoran memori
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

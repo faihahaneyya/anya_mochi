@@ -45,7 +45,8 @@ class AuthActivity : AppCompatActivity() {
                     .putBoolean("isLogin", true)
                     .apply()
 
-                val intent = Intent(this, WelcomeActivity::class.java)
+                // PERBAIKAN: Diarahkan ke SplashScreenActivity agar dicek ulang status isFirstTime-nya
+                val intent = Intent(this, SplashScreenActivity::class.java)
                 startActivity(intent)
                 finish()
 
