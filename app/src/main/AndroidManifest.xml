@@ -13,9 +13,15 @@
         android:theme="@style/Theme.Anyamochi">
 
         <activity
+            android:name=".saran.SaranFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".note.NoteFormActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".intro.IntroActivity"
             android:exported="true" />
-
         <activity
             android:name=".VerificationActivity"
             android:exported="false" />
@@ -27,7 +33,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -50,7 +55,6 @@
         <activity
             android:name=".pertemuan_2.TabungActivity"
             android:exported="false" />
-
         <activity
             android:name=".pertemuan_3.OnboardingActivity"
             android:exported="false" />
@@ -60,13 +64,13 @@
         <activity
             android:name=".pertemuan_3.WelcomeActivity"
             android:exported="false" />
-
         <activity
             android:name=".pertemuan_4.JobBoardActivity"
             android:exported="false" />
         <activity
             android:name=".pertemuan_4.PortofolioActivity"
             android:exported="false" />
+
     </application>
 
 </manifest>

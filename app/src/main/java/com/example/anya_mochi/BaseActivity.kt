@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import com.example.anya_mochi.About.AboutFragment
 import com.example.anya_mochi.Home.HomeFragment
 import com.example.anya_mochi.Profile.ProfileFragment
+// TAMBAHKAN IMPORT BARU INI:
+import com.example.anya_mochi.note.NoteFragment
+import com.example.anya_mochi.saran.SaranFragment
 import com.example.anya_mochi.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -25,6 +28,11 @@ class BaseActivity : AppCompatActivity() {
         binding.bottomNavView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> replaceFragment(HomeFragment())
+
+                // TAMBAHAN LOGIKA KLIK UNTUK NOTE & SARAN:
+                R.id.nav_note -> replaceFragment(NoteFragment())
+                R.id.nav_saran -> replaceFragment(SaranFragment())
+
                 R.id.nav_about -> replaceFragment(AboutFragment())
                 R.id.nav_profile -> replaceFragment(ProfileFragment())
             }

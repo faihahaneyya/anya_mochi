@@ -24,6 +24,9 @@
         app:itemIconTint="#00C896"
         app:itemTextColor="#00C896"
         app:itemRippleColor="#3300C896"
+
+        app:labelVisibilityMode="labeled"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
