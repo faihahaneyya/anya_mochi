@@ -2,7 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.anya_mochi">
 
+    <!-- Permissions Internet -->
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Permissions Notifikasi (Android 13+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Permissions Reminder / Alarm -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +19,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Anyamochi">
+
+        <!-- BroadcastReceiver untuk Reminder (AlarmManager) -->
+        <receiver
+            android:name=".utils.ReminderReceiver"
+            android:exported="false" />
 
         <activity
             android:name=".saran.SaranFormActivity"

@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import com.example.anya_mochi.About.AboutFragment
 import com.example.anya_mochi.Home.HomeFragment
 import com.example.anya_mochi.Profile.ProfileFragment
-// TAMBAHKAN IMPORT BARU INI:
 import com.example.anya_mochi.note.NoteFragment
 import com.example.anya_mochi.saran.SaranFragment
 import com.example.anya_mochi.databinding.ActivityBaseBinding
@@ -19,20 +18,30 @@ class BaseActivity : AppCompatActivity() {
         binding = ActivityBaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Tampilan default saat pertama dibuka adalah HOME
+        // Tentukan fragment default berdasarkan intent NAV_TARGET (dari notifikasi)
         if (savedInstanceState == null) {
-            replaceFragment(HomeFragment())
+            val navTarget = intent.getStringExtra("NAV_TARGET")
+            when (navTarget) {
+                "note" -> {
+                    replaceFragment(NoteFragment())
+                    binding.bottomNavView.selectedItemId = R.id.nav_note
+                }
+                "saran" -> {
+                    replaceFragment(SaranFragment())
+                    binding.bottomNavView.selectedItemId = R.id.nav_saran
+                }
+                else -> {
+                    replaceFragment(HomeFragment())
+                }
+            }
         }
 
         // Logika ketika menu navigasi diklik
         binding.bottomNavView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> replaceFragment(HomeFragment())
-
-                // TAMBAHAN LOGIKA KLIK UNTUK NOTE & SARAN:
                 R.id.nav_note -> replaceFragment(NoteFragment())
                 R.id.nav_saran -> replaceFragment(SaranFragment())
-
                 R.id.nav_about -> replaceFragment(AboutFragment())
                 R.id.nav_profile -> replaceFragment(ProfileFragment())
             }

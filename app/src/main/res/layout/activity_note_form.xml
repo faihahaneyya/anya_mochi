@@ -16,71 +16,178 @@
         app:layout_constraintTop_toTopOf="parent"
         app:titleTextColor="@android:color/white" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardForm"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp"
-        app:cardBackgroundColor="#FFF8E7"
+        android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toTopOf="@id/btnSaveNote"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <com.google.android.material.textfield.TextInputLayout
+            <!-- Card Form Utama -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardForm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Title"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                app:boxStrokeColor="#00C896"
-                app:hintTextColor="#00C896">
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FFF8E7">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etTitle"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#1A1A1A" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:padding="16dp"
+                    android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputLayout
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Judul Kegiatan"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:boxStrokeColor="#00C896"
+                        app:hintTextColor="#00C896">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#1A1A1A" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Deskripsi Kegiatan"
+                        android:layout_marginTop="12dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:boxStrokeColor="#00C896"
+                        app:hintTextColor="#00C896">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etContent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minLines="5"
+                            android:gravity="top"
+                            android:inputType="textMultiLine"
+                            android:textColor="#1A1A1A" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card Reminder -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardReminder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Content"
-                android:layout_marginTop="12dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                app:boxStrokeColor="#00C896"
-                app:hintTextColor="#00C896">
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#E8F5F0">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etContent"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:minLines="5"
-                    android:gravity="top"
-                    android:inputType="textMultiLine"
-                    android:textColor="#1A1A1A" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <!-- Header Reminder -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🔔 Aktifkan Pengingat"
+                                android:textSize="15sp"
+                                android:textColor="#1A1A1A"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ingatkan saya beberapa menit lagi"
+                                android:textSize="12sp"
+                                android:textColor="#757575"
+                                android:layout_marginTop="2dp" />
+
+                        </LinearLayout>
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchReminder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            app:thumbTint="#00C896"
+                            app:trackTint="#B2DFDB" />
+
+                    </LinearLayout>
+
+                    <!-- Input Menit (visible saat switch ON) -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilReminderMinutes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Jumlah menit pengingat (contoh: 30)"
+                        android:layout_marginTop="12dp"
+                        android:visibility="gone"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:boxStrokeColor="#00C896"
+                        app:hintTextColor="#00C896"
+                        app:startIconDrawable="@drawable/ic_notification"
+                        app:startIconTint="#00C896">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etReminderMinutes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:textColor="#1A1A1A" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Info teks -->
+                    <TextView
+                        android:id="@+id/tvReminderInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="⏱ Pengingat akan muncul sesuai menit yang diatur"
+                        android:textSize="11sp"
+                        android:textColor="#00897B"
+                        android:layout_marginTop="8dp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSaveNote"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Save Note"
+        android:text="Simpan Kegiatan"
         android:textColor="@android:color/white"
         app:backgroundTint="#00C896"
         app:cornerRadius="12dp"
-        app:layout_constraintTop_toBottomOf="@id/cardForm"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
