@@ -99,14 +99,30 @@ class HomeFragment : Fragment() {
 
         // 5. Logika tombol Sign Out di posisi paling bawah
         binding.btnLogout.setOnClickListener {
-            val sharedPref = activity?.getSharedPreferences("user_pref", android.content.Context.MODE_PRIVATE)
-            sharedPref?.edit()?.apply {
-                putBoolean("isLogin", false)
-                putBoolean("isFirstTime", true)
-                apply()
-            }
-            startActivity(Intent(activity, AuthActivity::class.java))
-            activity?.finish()
+            com.google.android.material.dialog.MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Konfirmasi Logout")
+                .setMessage("Apakah Anda yakin ingin Logout?")
+                .setPositiveButton("Ya") { _, _ ->
+                    // Proses hapus session login
+                    val sharedPref = activity?.getSharedPreferences("user_pref", android.content.Context.MODE_PRIVATE)
+                    sharedPref?.edit()?.apply {
+                        putBoolean("isLogin", false)
+                        putBoolean("isFirstTime", true)
+                        apply()
+                    }
+                    // Pindah ke halaman login/auth
+                    startActivity(Intent(activity, AuthActivity::class.java))
+                    activity?.finish()
+                }
+                .setNegativeButton("Tidak") { _, _ ->
+                    // Menampilkan snackbar jika batal keluar akun
+                    com.google.android.material.snackbar.Snackbar.make(
+                        binding.root,
+                        "Logout dibatalkan",
+                        com.google.android.material.snackbar.Snackbar.LENGTH_SHORT
+                    ).show()
+                }
+                .show()
         }
     }
 
