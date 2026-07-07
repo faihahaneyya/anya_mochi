@@ -74,7 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:columnCount="2"
-                android:rowCount="2"
+                android:rowCount="3"
                 android:alignmentMode="alignBounds"
                 android:columnOrderPreserved="false">
 
@@ -133,6 +133,20 @@
                     android:backgroundTint="#00C896"
                     android:fontFamily="@font/starfish"
                     android:text="🌐 Fasilitas\nDesa"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    app:cornerRadius="16dp" />
+                    
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPertemuan13"
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="2"
+                    android:layout_margin="6dp"
+                    android:backgroundTint="#00C896"
+                    android:fontFamily="@font/starfish"
+                    android:text="📷 Camera &amp;\nQR Code"
                     android:textAllCaps="false"
                     android:textSize="14sp"
                     android:textColor="@color/white"

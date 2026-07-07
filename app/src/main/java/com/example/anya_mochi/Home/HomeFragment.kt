@@ -63,6 +63,10 @@ class HomeFragment : Fragment() {
             startActivity(Intent(activity, WebViewActivity::class.java))
         }
 
+        binding.btnPertemuan13.setOnClickListener {
+            startActivity(Intent(activity, com.example.anya_mochi.pertemuan_13.ThirteenthActivity::class.java))
+        }
+
         // 3. Logika Setup TabLayout & ViewPager Feed
         val tabLayout = binding.tabLayoutFeed
         val viewPager = binding.viewPagerFeed
